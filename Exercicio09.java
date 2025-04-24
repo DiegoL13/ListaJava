@@ -4,19 +4,45 @@ expressa apenas em dias. Considerar ano com 365 dias e mês com 30 dias.
 */
 
 import java.util.Scanner;
-public class Exercicio09 {
+import java.time.LocalDate;
+
+public class Exercicio09{
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int idade, anos, meses, dias;
+        int ano_aniv, mes_aniv, dia_aniv, idade;
+        int ano_atual, mes_atual, dia_atual;
 
-        System.out.println("Informe quantos anos você tem: ");
-        anos = input.nextInt();
-        System.out.println("Informe quantos meses você tem: ");
-        meses = input.nextInt();
-        System.out.println("Informe quantos dias você tem: ");
-        dias = input.nextInt();
+        dia_atual=LocalDate.now().getDayOfMonth();
+        mes_atual=LocalDate.now().getMonthValue();
+        ano_atual=LocalDate.now().getYear();
 
-        idade = anos*365+meses*30+dias;
-        System.out.printf("Você viveu %d dias",idade);
+
+        System.out.println("Digite o número do dia que você nasceu:");
+        dia_aniv= input.nextInt();
+
+        System.out.println("Digite o número do mês que você nasceu:");
+        mes_aniv = input.nextInt();
+
+        System.out.println("Digite o ano que você nasceu:");
+        ano_aniv = input.nextInt();
+
+        if(mes_aniv == mes_atual) {
+            if (dia_aniv >= dia_atual) {
+                idade = ((ano_atual - ano_aniv) * 365) + dia_atual - dia_aniv;
+                System.out.printf("Você viveu %d dias\n",idade);
+            }
+            else{
+                idade = ((ano_atual - ano_aniv) * 365) + dia_atual - dia_aniv;
+                System.out.printf("Você viveu %d dias\n",idade);
+            }
+        }
+        else if(mes_aniv > mes_atual){
+            idade = ((ano_atual - ano_aniv) * 365) + ((12-mes_aniv + mes_atual) * 30);
+            System.out.printf("Você viveu %d dias\n",idade);
+        }
+        else{
+            idade = ((ano_atual - ano_aniv) * 365) + ((mes_atual - mes_aniv) * 30);
+            System.out.printf("Você viveu %d dias\n",idade);
+        }
     }
 }
