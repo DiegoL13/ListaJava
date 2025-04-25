@@ -14,11 +14,32 @@ menu principal. Caso a resposta seja ´S´ ou ´s´, deverá voltar ao menu, cas
 import java.util.Scanner;
 public class Exercicio37 {
     static Scanner input = new Scanner(System.in);
-    static int menu,n1,n2;
+    static int menu=0,n1,n2;
     static char resposta='S';
     public static void main(String[] args) {
-        while(resposta=='S') {
-            exibirMenu();
+        exibirMenu();
+        recebeNum();
+
+    }
+    public static void exibirMenu() {
+        while (menu < 1 || menu > 4) {
+            System.out.println("Escolha uma opção:\n" +
+                    "1. Adição\n" +
+                    "2. Subtração\n" +
+                    "3. Multiplicação\n" +
+                    "4. Divisão\n");
+            menu = input.nextInt();
+            if(menu<1 || menu>4){
+                System.out.println("Valor inválido.");
+            }
+            else{
+                recebeNum();
+            }
+        }
+    }
+
+    public static void recebeNum(){
+    while(resposta=='S') {
             System.out.println("Digite o primeiro número: ");
             n1 = input.nextInt();
 
@@ -27,34 +48,33 @@ public class Exercicio37 {
 
             switch (menu) {
                 case 1:
-                    System.out.printf("A soma do primeiro e segudo número é: %d", n1 + n2);
+                    System.out.printf("A soma do primeiro e segundo número é: %d\n", n1 + n2);
                     break;
                 case 2:
-                    System.out.printf("A subtração do primeiro pelo segudo número é: %d", n1 - n2);
+                    System.out.printf("A subtração do primeiro pelo segundo número é: %d\n", n1 - n2);
                     break;
                 case 3:
-                    System.out.printf("A multiplicação do primeiro e segundo número é: %d", n1 * n2);
+                    System.out.printf("A multiplicação do primeiro e segundo número é: %d\n", n1 * n2);
                     break;
                 case 4:
                     while (n2 == 0) {
                         System.out.println("Número não pode ser dividido por zero, digite novamente.");
                         n2 = input.nextInt();
                     }
-                    System.out.printf("A divisão do primeiro pelo segundo número é: %.2f", (float) n1 / n2);
+                    System.out.printf("A divisão do primeiro pelo segundo número é: %.2f\n", (float) n1 / n2);
                     break;
-                default:
-                    System.out.println("Número inválido!");
             }
-            System.out.println("Se desejar voltar para o meu principal digite \"S\"");
+            System.out.println("Se desejar voltar para o meu principal digite \"S\", caso contrário escolha qualquer caractere.");
+            input.nextLine();
             resposta = input.nextLine().toUpperCase().charAt(0);
+            menu=0;
+            if(resposta=='S'){
+                exibirMenu();
+            }
+            else{
+                resposta='N';
+                menu=1;
+            }
         }
-    }
-    public static void exibirMenu(){
-        System.out.println("Escolha um número:\n" +
-                "1. Adição\n" +
-                "2. Subtração\n" +
-                "3. Multiplicação\n" +
-                "4. Divisão\n");
-        menu= input.nextInt();
     }
 }
