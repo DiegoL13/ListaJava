@@ -39,7 +39,7 @@ public class Exercicio37 {
     }
 
     public static void recebeNum(){
-    while(resposta=='S') {
+        while(resposta=='S') {
             System.out.println("Digite o primeiro número: ");
             n1 = input.nextInt();
 
