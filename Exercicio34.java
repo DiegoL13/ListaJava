@@ -10,18 +10,18 @@ public class Exercicio34 {
 
     public static void main(String[] args) {
 
-        Scanner entrada = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
         int num,maior,menor;
 
         System.out.print("Digite um número positivo ou digite um número negativo para sair: ");
-        num = entrada.nextInt();
+        num = input.nextInt();
 
         if(num >=0){
             menor = num;
             maior = num;
         while(num >=0) {
             System.out.print("Digite outro número: ");
-            num = entrada.nextInt();
+            num = input.nextInt();
             if (num > maior) {
                 maior = num;
             }
