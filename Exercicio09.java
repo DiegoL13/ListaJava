@@ -1,12 +1,12 @@
 /*
-9) Faça um algoritmo que leia a idade de uma pessoa expressa em anos, meses e dias e escreva a idade dessa pessoa 
+9) Faça um algoritmo que leia a idade de uma pessoa expressa em anos, meses e dias e escreva a idade dessa pessoa
 expressa apenas em dias. Considerar ano com 365 dias e mês com 30 dias.
 */
 
 import java.util.Scanner;
 import java.time.LocalDate;
 
-public class Exercicio09{
+public class Teste{
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int ano_aniv, mes_aniv, dia_aniv, idade;
@@ -26,23 +26,7 @@ public class Exercicio09{
         System.out.println("Digite o ano que você nasceu:");
         ano_aniv = input.nextInt();
 
-        if(mes_aniv == mes_atual) {
-            if (dia_aniv >= dia_atual) {
-                idade = ((ano_atual - ano_aniv) * 365) + dia_atual - dia_aniv;
-                System.out.printf("Você viveu %d dias\n",idade);
-            }
-            else{
-                idade = ((ano_atual - ano_aniv) * 365) + dia_atual - dia_aniv;
-                System.out.printf("Você viveu %d dias\n",idade);
-            }
-        }
-        else if(mes_aniv > mes_atual){
-            idade = ((ano_atual - ano_aniv) * 365) + ((12-mes_aniv + mes_atual) * 30);
-            System.out.printf("Você viveu %d dias\n",idade);
-        }
-        else{
-            idade = ((ano_atual - ano_aniv) * 365) + ((mes_atual - mes_aniv) * 30);
-            System.out.printf("Você viveu %d dias\n",idade);
-        }
+        idade = (ano_atual - ano_aniv) * 365 + (mes_atual - mes_aniv) * 30 + (dia_atual - dia_aniv);
+        System.out.printf("Você viveu %d dias",idade);
     }
 }
