@@ -6,7 +6,7 @@ expressa apenas em dias. Considerar ano com 365 dias e mês com 30 dias.
 import java.util.Scanner;
 import java.time.LocalDate;
 
-public class Teste{
+public class Exercicio09{
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int ano_aniv, mes_aniv, dia_aniv, idade;
