@@ -64,7 +64,7 @@ public class Exercicio37 {
                     System.out.printf("A divisão do primeiro pelo segundo número é: %.2f\n", (float) n1 / n2);
                     break;
             }
-            System.out.println("Se desejar voltar para o meu principal digite \"S\", caso contrário escolha qualquer caractere.");
+            System.out.println("Se desejar voltar para o meu principal digite \"S\".");
             input.nextLine();
             resposta = input.nextLine().toUpperCase().charAt(0);
             menu=0;
@@ -74,6 +74,7 @@ public class Exercicio37 {
             else{
                 resposta='N';
                 menu=1;
+                System.out.println("Saindo...");
             }
         }
     }
