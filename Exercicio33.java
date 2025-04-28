@@ -1,6 +1,6 @@
 /*
 33) Escreva um programa que calcule e exiba a média da nota dos alunos de uma turma em uma prova. O número de
-alunos é desconhecido. Os dados de um aluno são: número de matrícula e a sua nota na prova em questão. 
+alunos é desconhecido. Os dados de um aluno são: número de matrícula e a sua nota na prova em questão.
 */
 
 import java.util.Scanner;
@@ -13,8 +13,8 @@ public class Exercicio33 {
         System.out.println("Informe a quantidade de alunos");
         qtd_alunos = input.nextInt();
 
-        for(int i=1;i<=qtd_alunos;i++){
-            System.out.printf("Informe a nota do %d° aluno: \n",i);
+        for(int matricula=1;matricula<=qtd_alunos;matricula++){
+            System.out.printf("Informe a nota do %d° aluno: \n",matricula);
             nota = input.nextDouble();
             media+=nota;
         }
