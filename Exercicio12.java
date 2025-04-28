@@ -1,6 +1,6 @@
 /*
-12) Escreva um programa que leia um número inteiro e exiba o seu módulo. O módulo de um número x é: x se x é maior 
-ou igual a zero 
+12) Escreva um programa que leia um número inteiro e exiba o seu módulo. O módulo de um número x é: x se x é maior
+ou igual a zero
 x * (-1) se x é menor que zero
 */
 
@@ -12,7 +12,6 @@ public class Exercicio12 {
         System.out.println("Digite um número: ");
         num=input.nextInt();
         System.out.printf("O módulo de %d é: ",num);
-        num=(num>0)? num : num*-1;
-        System.out.println(num);
+        System.out.println(num=(num>0)? num : num*-1);
     }
 }
