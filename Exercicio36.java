@@ -35,7 +35,9 @@ public class Exercicio36{
                 if (num >= 0)
                     menor = num;
             }
-            soma+=num;
+            if(contador<=10) {
+                soma += num;
+            }
             contador++;
 
         }
