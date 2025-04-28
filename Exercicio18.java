@@ -26,7 +26,7 @@ public class Exercicio18 {
                 System.out.println("Três");
                 break;
             default:
-                System.out.println("Valor inválido");
+                System.out.println("Código inválido");
                 break;
         }
     }
