@@ -7,12 +7,14 @@ que seria impossível efetuar o pagamento. Faça um programa para calcular o nú
 esperava receber.
 */
 
+import java.math.BigInteger;
+
 public class Exercicio43 {
     public static void main(String[] args) {
-        long graos=1;
+        BigInteger graos = new BigInteger("1");
         for(int i=1;i<=64;i++){
             if(i>=2){
-                graos*=2;
+                graos = graos.multiply(BigInteger.valueOf(2));
                 System.out.printf("Casa: %d - grãos: %d\n",i,graos);
             }
             else{
